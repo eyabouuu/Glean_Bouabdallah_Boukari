@@ -1,0 +1,131 @@
+/* Barre de navigation du haut (64px de haut, utilisée par les autres pages pour se caler) */
+:root {
+  --navbar-h: 64px;
+}
+
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  height: var(--navbar-h);
+  background: #fff;
+  border-bottom: 1px solid var(--line);
+}
+
+.navbar-inner {
+  height: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  box-sizing: border-box;
+}
+
+.navbar-logo {
+  font-weight: 700;
+  font-size: 1.4rem;
+  color: var(--green);
+  text-decoration: none;
+}
+
+.navbar-links {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  min-width: 0;
+}
+
+.nav-link {
+  font: inherit;
+  font-weight: 600;
+  font-size: 0.92rem;
+  color: var(--ink);
+  text-decoration: none;
+  background: none;
+  border: 0;
+  padding: 8px 14px;
+  border-radius: var(--pill);
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.nav-link:hover {
+  background: var(--soft);
+}
+
+.nav-link.active {
+  background: var(--soft);
+  color: var(--green-dark);
+}
+
+.nav-cta {
+  font-weight: 600;
+  font-size: 0.92rem;
+  text-decoration: none;
+  background: var(--green);
+  color: #fff;
+  padding: 8px 18px;
+  border-radius: var(--pill);
+  white-space: nowrap;
+}
+
+.nav-cta:hover,
+.nav-cta.active {
+  background: var(--green-dark);
+}
+
+.navbar-user {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0 8px;
+  min-width: 0;
+}
+
+.navbar-avatar {
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: var(--green);
+  color: #fff;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.navbar-name {
+  font-weight: 600;
+  font-size: 0.9rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 180px;
+}
+
+.nav-logout {
+  color: #B3261E;
+}
+
+.nav-logout:hover {
+  background: #FDECEA;
+}
+
+@media (max-width: 600px) {
+  .navbar-inner {
+    padding: 0 16px;
+  }
+
+  .navbar-name {
+    display: none;
+  }
+
+  .nav-link,
+  .nav-cta {
+    padding: 8px 10px;
+  }
+}
